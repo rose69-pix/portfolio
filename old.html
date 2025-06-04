@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-gray-900 text-gray-100">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shakthi Dharan | Web Developer & Designer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        @keyframes fadeIn {from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes scaleUp {from{transform:scale(0.9);opacity:0}to{transform:scale(1);opacity:1}}
+        @keyframes float {0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+        @keyframes gradientBG {0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        .fade-in{animation:fadeIn 0.8s ease-in-out forwards}
+        .scale-up{animation:scaleUp 0.5s ease-in-out forwards}
+        .float{animation:float 4s ease-in-out infinite}
+        .gradient-bg{background:linear-gradient(-45deg,#1e293b,#0f172a,#1e40af,#1e293b);background-size:400% 400%;animation:gradientBG 15s ease infinite}
+        .text-gradient{background:linear-gradient(90deg,#fcd34d,#f59e0b,#fbbf24);-webkit-background-clip:text;background-clip:text;color:transparent}
+        .skill-bar{height:8px;border-radius:4px;background:rgba(255,255,255,0.1);overflow:hidden}
+        .skill-progress{height:100%;border-radius:4px;background:linear-gradient(90deg,#fcd34d,#f59e0b);transition:width 1.5s ease-in-out}
+        .hover-grow{transition:transform 0.3s ease}
+        .hover-grow:hover{transform:scale(1.05)}
+        .nav-link{position:relative}
+        .nav-link::after{content:'';position:absolute;width:0;height:2px;bottom:-4px;left:0;background-color:#fcd34d;transition:width 0.3s ease}
+        .nav-link:hover::after{width:100%}
+        .card-hover{transition:all 0.3s ease;transform-style:preserve-3d}
+        .card-hover:hover{transform:translateY(-5px) rotateX(5deg);box-shadow:0 20px 25px -5px rgba(0,0,0,0.1),0 10px 10px -5px rgba(0,0,0,0.04)}
+    </style>
+</head>
+<body class="font-sans gradient-bg">
+    <!-- Header -->
+    <header class="bg-white/10 backdrop-blur-md border-b border-gray-700 shadow-lg fade-in sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-white animate__animated animate__fadeInLeft">Shakthi <span class="text-gradient">Dharan</span></div>
+            <nav class="hidden md:flex space-x-8 text-sm">
+                <a href="#projects" class="nav-link text-white hover:text-yellow-300 transition duration-300 animate__animated animate__fadeInDown">Projects</a>
+                <a href="#skills" class="nav-link text-white hover:text-yellow-300 transition duration-300 animate__animated animate__fadeInDown animate__delay-1s">Skills</a>
+                <a href="#about" class="nav-link text-white hover:text-yellow-300 transition duration-300 animate__animated animate__fadeInDown animate__delay-2s">About</a>
+                <a href="#contact" class="nav-link text-white hover:text-yellow-300 transition duration-300 animate__animated animate__fadeInDown animate__delay-4s">Contact</a>
+            </nav>
+            <button class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto px-6 py-20 md:py-32 mt-4">
+        <div class="w-full md:w-1/2 mb-10 md:mb-0 animate__animated animate__fadeInLeft">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight animate__animated animate__fadeInDown animate__delay-1s">
+                Crafting Digital <span class="text-gradient">Experiences</span> That Inspire
+            </h1>
+            <p class="text-gray-300 text-lg md:text-xl leading-relaxed mb-8 animate__animated animate__fadeInUp animate__delay-2s">
+                I'm Shakthi Dharan, a passionate web developer and designer dedicated to creating beautiful, functional, and user-centric digital experiences.
+            </p>
+            <div class="flex space-x-4 animate__animated animate__fadeInUp animate__delay-3s">
+                <a href="#projects"></a>
+                    <button class="px-6 py-3 bg-gradient-to-r from-yellow-300 to-yellow-500 text-gray-900 font-bold rounded-lg hover:opacity-90 transition duration-300 scale-up hover-grow shadow-lg flex items-center gap-2">
+                        <!-- Work/Portfolio SVG -->
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 12v9m0 0l-3-3m3 3l3-3M4 7V5a2 2 0 012-2h12a2 2 0 012 2v2"></path></svg>
+                        View My Work
+                    </button>
+                </a>
+                <a href="#contact">
+                    <button class="px-6 py-3 border-2 border-yellow-300 text-yellow-300 font-bold rounded-lg hover:bg-yellow-300 hover:text-gray-900 transition duration-300 scale-up hover-grow flex items-center gap-2">
+                        <!-- Message/Contact SVG -->
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2v-1M21 8l-9 6-9-6"></path></svg>
+                        Let's Talk
+                    </button>
+                </a>
+            </div>
+            <div class="mt-10 flex space-x-4 animate__animated animate__fadeInUp animate__delay-4s">
+                <a href="https://github.com/" target="_blank" rel="noopener" title="GitHub"
+                   class="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center hover-grow cursor-pointer transition-transform duration-300 hover:scale-110 group">
+                     <!-- GitHub SVG -->
+                            <svg class="text-xl w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M12 2C6.477 2 2 6.484 2 12.021c0 4.426 2.865 8.18 6.839 9.504.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.091-.647.35-1.088.636-1.339-2.221-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.203 2.397.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.847-2.337 4.695-4.566 4.944.359.309.678.919.678 1.852 0 1.336-.012 2.417-.012 2.747 0 .267.18.579.688.481C19.138 20.197 22 16.447 22 12.021 22 6.484 17.523 2 12 2z"/>
+                            </svg>
+                            <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 group-hover:opacity-100 bg-gray-900 text-white text-xs rounded px-2 py-1 mt-2 pointer-events-none transition">GitHub</span>
+                        </a>
+                <a href="https://linkedin.com/" target="_blank" rel="noopener" title="LinkedIn"
+                   class="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center hover-grow cursor-pointer transition-transform duration-300 hover:scale-110 group">
+                    <!-- LinkedIn SVG -->
+                    <svg class="w-6 h-6 text-white group-hover:text-gray-900" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.27c-.966 0-1.75-.79-1.75-1.76 0-.97.784-1.76 1.75-1.76s1.75.79 1.75 1.76c0 .97-.784 1.76-1.75 1.76zm13.5 11.27h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.89v1.36h.04c.4-.75 1.37-1.54 2.82-1.54 3.01 0 3.57 1.98 3.57 4.56v5.62z"/>
+                    </svg>
+                </a>
+                <a href="https://twitter.com/" target="_blank" rel="noopener" title="Twitter"
+                   class="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center hover-grow cursor-pointer transition-transform duration-300 hover:scale-110 group">
+                    <!-- Twitter SVG -->
+                    <svg class="w-6 h-6 text-white group-hover:text-gray-900" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <g>
+                            <path d="M22.46 5.924c-.793.352-1.645.59-2.54.698a4.48 4.48 0 001.964-2.475 8.94 8.94 0 01-2.828 1.082 4.48 4.48 0 00-7.635 4.086A12.72 12.72 0 013.112 4.89a4.48 4.48 0 001.387 5.976 4.46 4.46 0 01-2.03-.561v.057a4.48 4.48 0 003.593 4.393 4.5 4.5 0 01-2.025.077 4.48 4.48 0 004.184 3.11A8.98 8.98 0 012 19.54a12.68 12.68 0 006.88 2.017c8.26 0 12.78-6.84 12.78-12.77 0-.195-.004-.39-.013-.583A9.18 9.18 0 0024 4.59a8.93 8.93 0 01-2.54.698z"/>
+                        </g>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="w-full md:w-1/2 flex justify-center animate__animated animate__fadeInRight">
+            <div id="hero-photo-container" class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl border-4 border-yellow-300 float hover-grow transition-transform duration-500 cursor-pointer group">
+                <img id="hero-photo" src="./photos/pg1.jpg" alt="Shakthi Dharan"
+                    class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105" />
+                <div class="absolute inset-0 bg-yellow-300 opacity-0 group-hover:opacity-20 transition duration-500"></div>
+                <!-- Zoom overlay -->
+                <div id="zoom-overlay" class="fixed inset-0 bg-black/80 flex items-center justify-center z-50 hidden">
+                    <img src="./photos/IMG_20240929_172458110.jpg" alt="Shakthi Dharan Zoomed"
+                        class="rounded-2xl shadow-2xl max-w-full max-h-full animate__animated animate__zoomIn" style="width: 90vw; height: auto; max-height: 90vh;" />
+                    <button id="close-zoom" class="absolute top-8 right-8 text-white bg-yellow-400 hover:bg-yellow-500 rounded-full p-3 shadow-lg text-2xl transition duration-300">
+                        &times;
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        // Zoom photo on click
+        const photoContainer = document.getElementById('hero-photo-container');
+        const zoomOverlay = document.getElementById('zoom-overlay');
+        const closeZoom = document.getElementById('close-zoom');
+
+        photoContainer.addEventListener('click', function (e) {
+            // Only trigger if not clicking the overlay close button
+            if (!e.target.closest('#zoom-overlay') && !zoomOverlay.classList.contains('flex')) {
+                zoomOverlay.classList.remove('hidden');
+                zoomOverlay.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+
+        closeZoom.addEventListener('click', function () {
+            zoomOverlay.classList.remove('flex');
+            zoomOverlay.classList.add('hidden');
+            document.body.style.overflow = '';
+        });
+
+        // Close zoom on overlay click (not image)
+        zoomOverlay.addEventListener('click', function (e) {
+            if (e.target === zoomOverlay) {
+                zoomOverlay.classList.remove('flex');
+                zoomOverlay.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+
+    <!-- Skills -->
+    <section id="skills" class="max-w-5xl mx-auto px-6 py-16 fade-in">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">My <span class="text-gradient">Skills</span></h2>
+            <p class="text-gray-400 max-w-2xl mx-auto">I've honed a diverse set of skills to deliver comprehensive digital solutions from concept to deployment.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white/10 backdrop-blur-md p-8 rounded-xl shadow-lg card-hover">
+                <h3 class="text-xl font-semibold text-white mb-6 flex items-center"><span class="w-8 h-8 bg-yellow-300 rounded-full flex items-center justify-center text-gray-900 mr-3">1</span>Technical Skills</h3>
+                <div id="technical-skills-list" class="space-y-6">
+                    <!-- Skills will be injected here -->
+                </div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-md p-8 rounded-xl shadow-lg card-hover">
+                <h3 class="text-xl font-semibold text-white mb-6 flex items-center"><span class="w-8 h-8 bg-yellow-300 rounded-full flex items-center justify-center text-gray-900 mr-3">2</span>Design Skills</h3>
+                <div id="design-skills-list" class="space-y-6">
+                    <!-- Skills will be injected here -->
+                </div>
+            </div>
+        </div>
+        <script>
+            // Default skills
+            const technicalSkills = [
+                { name: "HTML/CSS", level: 95 },
+                { name: "JavaScript", level: 85 },
+                { name: "React", level: 80 }
+            ];
+            const designSkills = [
+                { name: "UI/UX Design", level: 88 },
+                { name: "Figma", level: 92 },
+                { name: "Responsive Design", level: 95 }
+            ];
+
+            function renderSkills(listId, skills) {
+                const container = document.getElementById(listId);
+                container.innerHTML = '';
+                skills.forEach(skill => {
+                    const skillDiv = document.createElement('div');
+                    skillDiv.innerHTML = `
+                        <div class="flex justify-between mb-2">
+                            <span class="text-white">${skill.name}</span>
+                            <span class="text-yellow-300">${skill.level}%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width:${skill.level}%"></div>
+                        </div>
+                    `;
+                    container.appendChild(skillDiv);
+                });
+            }
+
+            // Initial render
+            renderSkills('technical-skills-list', technicalSkills);
+            renderSkills('design-skills-list', designSkills);
+        </script>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="max-w-7xl mx-auto px-6 py-16 fade-in">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Featured <span class="text-gradient">Projects</span></h2>
+            <p class="text-gray-400 max-w-2xl mx-auto">A selection of my recent work showcasing my design and development capabilities.</p>
+        </div>
+        <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Initial Projects -->
+            <div class="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden shadow-lg card-hover group">
+                <div class="relative overflow-hidden h-60">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Project 1" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                        <div><h3 class="text-xl font-bold text-white">E-commerce Platform</h3><p class="text-gray-300">Web Design & Development</p></div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-300 mb-4">A modern e-commerce platform with seamless checkout experience and product customization.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-yellow-300/10 text-yellow-300 text-xs rounded-full">React</span>
+                        <span class="px-3 py-1 bg-yellow-300/10 text-yellow-300 text-xs rounded-full">Node.js</span>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden shadow-lg card-hover group">
+                <div class="relative overflow-hidden h-60">
+                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Project 2" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                        <div><h3 class="text-xl font-bold text-white">Portfolio Website</h3><p class="text-gray-300">Web Design & Development</p></div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-300 mb-4">A sleek portfolio website for a creative professional with animated elements.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-yellow-300/10 text-yellow-300 text-xs rounded-full">Webflow</span>
+                        <span class="px-3 py-1 bg-yellow-300/10 text-yellow-300 text-xs rounded-full">GSAP</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-12">
+            <button id="viewAllProjectsBtn" class="px-8 py-3 border-2 border-yellow-300 text-yellow-300 font-bold rounded-lg hover:bg-yellow-300 hover:text-gray-900 transition duration-300 scale-up hover-grow">View All Projects</button>
+        </div>
+        <script>
+            // More projects data
+            const moreProjects = [
+                {
+                    title: "SaaS Dashboard",
+                    subtitle: "UI/UX & Frontend",
+                    img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    desc: "A robust SaaS analytics dashboard with real-time data visualization and user management.",
+                    tags: ["Vue.js", "Tailwind CSS"]
+                },
+                {
+                    title: "Travel Blog",
+                    subtitle: "Web Design & CMS",
+                    img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    desc: "A visually rich travel blog with CMS integration and interactive maps.",
+                    tags: ["WordPress", "Mapbox"]
+                },
+                {
+                    title: "Startup Landing Page",
+                    subtitle: "Branding & Web",
+                    img: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    desc: "Conversion-focused landing page for a tech startup, featuring custom illustrations.",
+                    tags: ["Figma", "HTML/CSS"]
+                },
+                {
+                    title: "Restaurant Ordering App",
+                    subtitle: "Mobile Web App",
+                    img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    desc: "A mobile-first web app for restaurant ordering and table reservations.",
+                    tags: ["PWA", "Firebase"]
+                },
+                {
+                    title: "Event Management System",
+                    subtitle: "Full Stack",
+                    img: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    desc: "End-to-end event management platform with ticketing and attendee analytics.",
+                    tags: ["Django", "React"]
+                },
+                {
+                    title: "Personal Finance Tool",
+                    subtitle: "Web App",
+                    img: "https://images.unsplash.com/photo-1464983953574-0892a716854b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    desc: "A personal finance tracker with budgeting, charts, and goal setting.",
+                    tags: ["Angular", "Chart.js"]
+                }
+            ];
+
+            let projectsExpanded = false;
+            document.getElementById('viewAllProjectsBtn').addEventListener('click', function () {
+                if (projectsExpanded) return;
+                const grid = document.getElementById('projects-grid');
+                moreProjects.forEach(project => {
+                    const div = document.createElement('div');
+                    div.className = "bg-white/10 backdrop-blur-md rounded-xl overflow-hidden shadow-lg card-hover group animate__animated animate__fadeInUp";
+                    div.innerHTML = `
+                        <div class="relative overflow-hidden h-60">
+                            <img src="${project.img}" alt="${project.title}" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                                <div>
+                                    <h3 class="text-xl font-bold text-white">${project.title}</h3>
+                                    <p class="text-gray-300">${project.subtitle}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-gray-300 mb-4">${project.desc}</p>
+                            <div class="flex flex-wrap gap-2">
+                                ${project.tags.map(tag => `<span class="px-3 py-1 bg-yellow-300/10 text-yellow-300 text-xs rounded-full">${tag}</span>`).join('')}
+                            </div>
+                        </div>
+                    `;
+                    grid.appendChild(div);
+                });
+                this.textContent = "Show Less";
+                projectsExpanded = true;
+                this.addEventListener('click', function showLessHandler() {
+                    // Remove added projects
+                    for (let i = 0; i < moreProjects.length; i++) {
+                        grid.removeChild(grid.lastElementChild);
+                    }
+                    this.textContent = "View All Projects";
+                    projectsExpanded = false;
+                    this.removeEventListener('click', showLessHandler);
+                });
+            });
+        </script>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="max-w-5xl mx-auto px-6 py-16 fade-in">
+        <div class="bg-white/10 backdrop-blur-md rounded-xl p-8 md:p-12 shadow-lg overflow-hidden relative">
+            <div class="absolute -top-20 -right-20 w-64 h-64 bg-yellow-300/10 rounded-full filter blur-3xl"></div>
+            <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-yellow-300/10 rounded-full filter blur-3xl"></div>
+            <div class="relative z-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">About <span class="text-gradient">Me</span></h2>
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/2">
+                        <p class="text-gray-300 mb-6 leading-relaxed">I'm a passionate web developer and designer with over 5 years of experience creating digital experiences that are both beautiful and functional. My journey in tech began when I built my first website at 16, and I've been hooked ever since.</p>
+                        <p class="text-gray-300 mb-6 leading-relaxed">I specialize in front-end development with React and modern CSS frameworks, as well as no-code solutions like Webflow. My design approach focuses on creating intuitive user interfaces that solve real problems.</p>
+                        <div class="flex space-x-4">
+                            <div class="bg-yellow-300/10 border border-yellow-300/30 p-4 rounded-lg hover-grow"><h4 class="text-yellow-300 font-bold mb-1">5+</h4><p class="text-gray-300 text-sm">Years Experience</p></div>
+                            <div class="bg-yellow-300/10 border border-yellow-300/30 p-4 rounded-lg hover-grow"><h4 class="text-yellow-300 font-bold mb-1">50+</h4><p class="text-gray-300 text-sm">Projects Completed</p></div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6 hover-grow">
+                            <h3 class="text-xl font-semibold text-white mb-4">My Approach</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 mt-1"><div class="w-8 h-8 bg-yellow-300 rounded-full flex items-center justify-center text-gray-900"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd" /></svg></div></div>
+                                    <div class="ml-3"><h4 class="text-white font-medium">Innovative Solutions</h4><p class="text-gray-400 text-sm mt-1">I leverage the latest technologies to create forward-thinking solutions.</p></div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 mt-1"><div class="w-8 h-8 bg-yellow-300 rounded-full flex items-center justify-center text-gray-900"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z" /><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" /></svg></div></div>
+                                    <div class="ml-3"><h4 class="text-white font-medium">User-Centric Design</h4><p class="text-gray-400 text-sm mt-1">Every decision is made with the end-user's needs in mind.</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="max-w-5xl mx-auto px-6 py-16 fade-in">
+    <section id="contact" class="max-w-5xl mx-auto px-6 py-16 fade-in">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Let's <span class="text-gradient">Connect</span></h2>
+            <p class="text-gray-400 max-w-2xl mx-auto">Have a project in mind or want to discuss potential opportunities? I'd love to hear from you!</p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Contact Form -->
+            <div class="bg-white/10 backdrop-blur-md p-8 rounded-xl shadow-lg card-hover">
+                <h3 class="text-2xl font-bold text-white mb-6">Get In Touch</h3>
+                <form id="contactForm" action="#" method="POST" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-white mb-2">Your Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your name"
+                            class="w-full p-4 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-300 text-white placeholder-gray-400 transition duration-300">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-white mb-2">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="you@email.com"
+                            class="w-full p-4 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-300 text-white placeholder-gray-400 transition duration-300">
+                    </div>
+                    <div>
+                        <label for="subject" class="block text-white mb-2">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Subject (optional)"
+                            class="w-full p-4 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-300 text-white placeholder-gray-400 transition duration-300">
+                    </div>
+                    <div>
+                        <label for="service" class="block text-white mb-2">Service</label>
+                        <select id="service" name="service"
+                            class="w-full p-4 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-300 text-white transition duration-300">
+                            <option value="">Select a service</option>
+                            <option value="web">Web Development</option>
+                            <option value="design">UI/UX Design</option>
+                            <option value="consulting">Consulting</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="message" class="block text-white mb-2">Your Message</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project or inquiry..."
+                            class="w-full p-4 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-300 text-white placeholder-gray-400 transition duration-300"></textarea>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="newsletter" name="newsletter" class="accent-yellow-300 mr-2">
+                        <label for="newsletter" class="text-gray-300 text-sm">Subscribe to my newsletter</label>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-gradient-to-r from-yellow-300 to-yellow-500 text-gray-900 font-bold py-4 rounded-lg hover:opacity-90 transition duration-300 hover-grow shadow-lg flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        Send Message
+                    </button>
+                    <div id="formStatus" class="text-center text-sm mt-4"></div>
+                </form>
+                <script>
+                    // Budget slider value display
+                    const budget = document.getElementById('budget');
+                    const budgetValue = document.getElementById('budgetValue');
+                    budget.addEventListener('input', () => {
+                        budgetValue.textContent = `$${budget.value}`;
+                    });
+
+                    // Simple AJAX form submission (demo only)
+                    document.getElementById('contactForm').addEventListener('submit', function (e) {
+                        e.preventDefault();
+                        const status = document.getElementById('formStatus');
+                        status.textContent = "Sending...";
+                        setTimeout(() => {
+                            status.textContent = "Thank you! Your message has been sent.";
+                            this.reset();
+                            budgetValue.textContent = "$5000";
+                        }, 1200);
+                    });
+                </script>
+            </div>
+            <!-- Contact Info & Socials -->
+            <div class="space-y-8">
+                <div class="bg-white/10 backdrop-blur-md p-8 rounded-xl shadow-lg card-hover">
+                    <h3 class="text-2xl font-bold text-white mb-6">Contact Information</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 bg-yellow-300 rounded-full flex items-center justify-center text-gray-900">
+                                    <!-- Location SVG -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" /></svg>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-white font-medium">Location</h4>
+                                <p class="text-gray-400 mt-1">San Francisco, CA</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 bg-yellow-300 rounded-full flex items-center justify-center text-gray-900">
+                                    <!-- Phone SVG -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" /></svg>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-white font-medium">Phone</h4>
+                                <p class="text-gray-400 mt-1">+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 bg-yellow-300 rounded-full flex items-center justify-center text-gray-900">
+                                    <!-- Email SVG -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H8m0 0l4-4m-4 4l4 4" /></svg>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-white font-medium">Email</h4>
+                                <p class="text-gray-400 mt-1"><a href="mailto:hello@shakthidharan.com" class="hover:text-yellow-300 transition">hello@shakthidharan.com</a></p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 bg-yellow-300 rounded-full flex items-center justify-center text-gray-900"></div>
+                                    <!-- Availability SVG -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2a4 4 0 014-4h4" /></svg>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-white font-medium">Availability</h4>
+                                <p class="text-gray-400 mt-1">Mon-Fri, 9am-6pm PST</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Social Links with official logos -->
+                <div class="bg-white/10 backdrop-blur-md p-8 rounded-xl shadow-lg card-hover">
+                    <h3 class="text-2xl font-bold text-white mb-6">Follow Me</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://twitter.com/" target="_blank" rel="noopener" title="Twitter"
+                            class="group w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-yellow-300 hover:text-gray-900 transition duration-300 hover-grow relative">
+                            <!-- Twitter SVG -->
+                            <svg class="text-xl w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <g>
+                                    <path d="M22.46 5.924c-.793.352-1.645.59-2.54.698a4.48 4.48 0 001.964-2.475 8.94 8.94 0 01-2.828 1.082 4.48 4.48 0 00-7.635 4.086A12.72 12.72 0 013.112 4.89a4.48 4.48 0 001.387 5.976 4.46 4.46 0 01-2.03-.561v.057a4.48 4.48 0 003.593 4.393 4.5 4.5 0 01-2.025.077 4.48 4.48 0 004.184 3.11A8.98 8.98 0 012 19.54a12.68 12.68 0 006.88 2.017c8.26 0 12.78-6.84 12.78-12.77 0-.195-.004-.39-.013-.583A9.18 9.18 0 0024 4.59a8.93 8.93 0 01-2.54.698z"/>
+                                </g>
+                            </svg>
+                            <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 group-hover:opacity-100 bg-gray-900 text-white text-xs rounded px-2 py-1 mt-2 pointer-events-none transition">Twitter</span>
+                        </a>
+                        <a href="https://linkedin.com/" target="_blank" rel="noopener" title="LinkedIn"
+                            class="group w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-yellow-300 hover:text-gray-900 transition duration-300 hover-grow relative">
+                            <!-- LinkedIn SVG -->
+                            <svg class="text-xl w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.27c-.966 0-1.75-.79-1.75-1.76 0-.97.784-1.76 1.75-1.76s1.75.79 1.75 1.76c0 .97-.784 1.76-1.75 1.76zm13.5 11.27h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.89v1.36h.04c.4-.75 1.37-1.54 2.82-1.54 3.01 0 3.57 1.98 3.57 4.56v5.62z"/>
+                            </svg>
+                            <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 group-hover:opacity-100 bg-gray-900 text-white text-xs rounded px-2 py-1 mt-2 pointer-events-none transition">LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/" target="_blank" rel="noopener" title="GitHub"
+                            class="group w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-yellow-300 hover:text-gray-900 transition duration-300 hover-grow relative">
+                            <!-- GitHub SVG -->
+                            <svg class="text-xl w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M12 2C6.477 2 2 6.484 2 12.021c0 4.426 2.865 8.18 6.839 9.504.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.091-.647.35-1.088.636-1.339-2.221-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.203 2.397.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.847-2.337 4.695-4.566 4.944.359.309.678.919.678 1.852 0 1.336-.012 2.417-.012 2.747 0 .267.18.579.688.481C19.138 20.197 22 16.447 22 12.021 22 6.484 17.523 2 12 2z"/>
+                            </svg>
+                            <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 group-hover:opacity-100 bg-gray-900 text-white text-xs rounded px-2 py-1 mt-2 pointer-events-none transition">GitHub</span>
+                        </a>
+                        <a href="https://instagram.com/" target="_blank" rel="noopener" title="Instagram"
+                            class="group w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-yellow-300 hover:text-gray-900 transition duration-300 hover-grow relative">
+                            <!-- Instagram SVG -->
+                            <svg class="text-xl w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.34 3.608 1.314.974.974 1.252 2.241 1.314 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.34 2.633-1.314 3.608-.974.974-2.241 1.252-3.608 1.314-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.34-3.608-1.314-.974-.974-1.252-2.241-1.314-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.34-2.633 1.314-3.608C4.521 2.573 5.788 2.295 7.154 2.233 8.42 2.175 8.8 2.163 12 2.163zm0-2.163C8.741 0 8.332.012 7.052.07 5.771.128 4.659.388 3.678 1.37 2.697 2.352 2.437 3.464 2.379 4.745 2.321 6.025 2.309 6.434 2.309 12c0 5.566.012 5.975.07 7.255.058 1.281.318 2.393 1.299 3.375.981.981 2.093 1.241 3.374 1.299 1.28.058 1.689.07 7.255.07s5.975-.012 7.255-.07c1.281-.058 2.393-.318 3.374-1.299.981-.981 1.241-2.093 1.299-3.374.058-1.28.07-1.689.07-7.255s-.012-5.975-.07-7.255c-.058-1.281-.318-2.393-1.299-3.374C19.647.388 18.535.128 17.255.07 15.975.012 15.566 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a3.999 3.999 0 110-7.998 3.999 3.999 0 010 7.998zm6.406-11.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/>
+                            </svg>
+                            <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 group-hover:opacity-100 bg-gray-900 text-white text-xs rounded px-2 py-1 mt-2 pointer-events-none transition">Instagram</span>
+                        </a>
+                        <a href="https://youtube.com/" target="_blank" rel="noopener" title="YouTube"
+                            class="group w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-yellow-300 hover:text-gray-900 transition duration-300 hover-grow relative">
+                            <!-- YouTube SVG -->
+                            <svg class="text-xl w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M23.498 6.186a2.994 2.994 0 00-2.107-2.12C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.391.566A2.994 2.994 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a2.994 2.994 0 002.107 2.12C4.5 20.5 12 20.5 12 20.5s7.5 0 9.391-.566a2.994 2.994 0 002.107-2.12C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                            <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 group-hover:opacity-100 bg-gray-900 text-white text-xs rounded px-2 py-1 mt-2 pointer-events-none transition">YouTube</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black/50 text-white py-12 fade-in">
+        <div class="max-w-15xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="text-2xl font-bold text-white">Shakthi <span class="text-gradient">Dharan</span></div>
+                    <p class="text-gray-400 mt-2">Crafting digital experiences that inspire.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#projects" class="text-gray-400 hover:text-yellow-300 transition duration-300">Projects</a>
+                    <a href="#skills" class="text-gray-400 hover:text-yellow-300 transition duration-300">Skills</a>
+                    <a href="#about" class="text-gray-400 hover:text-yellow-300 transition duration-300">About</a>
+                    <a href="#contact" class="text-gray-400 hover:text-yellow-300 transition duration-300">Contact</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">© 2023 Shakthi Dharan. All rights reserved.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-yellow-300 transition duration-300">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-yellow-300 transition duration-300">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="fixed bottom-8 right-8 bg-yellow-300 text-gray-900 p-3 rounded-full shadow-lg hover:bg-yellow-400 transition duration-300 scale-up hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg>
+    </button>
+
+    <script>
+        // Scroll to Top Button
+        const scrollToTopButton = document.getElementById('scrollToTop');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) scrollToTopButton.classList.remove('hidden');
+            else scrollToTopButton.classList.add('hidden');
+        });
+        scrollToTopButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // Animate elements when they come into view
+        const animateOnScroll = () => {
+            document.querySelectorAll('.fade-in, .scale-up, .card-hover').forEach(element => {
+                if (element.getBoundingClientRect().top < window.innerHeight / 1.3) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0) scale(1)';
+                }
+            });
+        };
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Animate skill bars on scroll
+        const animateSkillBars = () => {
+            const skillsSection = document.getElementById('skills');
+            if (skillsSection.getBoundingClientRect().top < window.innerHeight / 1.3) {
+                document.querySelectorAll('.skill-progress').forEach(bar => {
+                    const width = bar.style.width;
+                    bar.style.width = '0';
+                    setTimeout(() => bar.style.width = width, 100);
+                });
+                window.removeEventListener('scroll', animateSkillBars);
+            }
+        };
+        window.addEventListener('scroll', animateSkillBars);
+    </script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
